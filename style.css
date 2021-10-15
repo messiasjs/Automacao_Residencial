@@ -1,0 +1,196 @@
+
+/*  
+Side Navigation Menu V2, RWD
+===================
+License:
+https://goo.gl/EaUPrt
+===================
+Author: @PableraShow
+*/
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+/*font-family: 'Open s', sans-serif;*/
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: 300;
+line-height: 1.42em;
+color:#ffffff;
+background-color:#1F2739;
+}
+
+h4 {
+font-size:3em; 
+font-weight: 300;
+line-height:1.2em;
+text-align: center;
+padding-left: 50px;
+padding-right: 50px;
+/*color: #FFF842;*/
+color: #4DC3FA;
+}
+
+h1 {
+font-size:3em; 
+font-weight: 300;
+line-height:1.2em;
+text-align: center;
+/*color: #FFF842;*/
+color: #4DC3FA;
+}
+
+h2 {
+font-size:1em; 
+font-weight: 300;
+text-align: center;
+display: block;
+line-height:1em;
+padding-bottom: 2em;
+color: #ffffff;
+}
+
+h2 a {
+font-weight: 700;
+/*text-transform: uppercase;*/
+color: #ffffff;
+text-decoration: none;
+}
+
+.config h2 {
+font-size:1em; 
+font-weight: 300;
+text-align: left;
+display: block;
+line-height:1em;
+padding-bottom: 0px;
+color: #4DC3FA;
+text-transform: uppercase;
+}
+
+
+h3 {
+font-size: 2em; 
+font-weight: 30;
+text-align: center;
+line-height:1em;
+color: #ffffff;
+}
+
+.legenda{
+    text-align: left;
+    font-size: 14px; 
+    line-height:30px;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+text-align: center;
+/*color: #FFF842;*/
+color: #4DC3FA;
+}
+
+.item td{ 
+    text-align: center;
+}
+
+.item td a:hover{
+    color: #4DC3FA;
+}
+
+.item td a:active, a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.container td {
+    font-weight: normal;
+    font-size: 1em;
+-webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+    text-align: center;
+    overflow: hidden;
+    width: 80%;
+    margin-right: auto;
+    margin-left:auto;
+display: table;
+padding: 0 0 2em 0;
+}
+
+.central .container {
+    text-align: right;
+    overflow: hidden;
+    width: 85%;
+    margin: 0 0 0 0;
+    /*padding: 0 0 2em 0;*/
+}
+
+
+.config .container {
+    text-align: right;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    /*padding: 0 0 2em 0;*/
+}
+
+.container td, .container th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+    background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+.container th {
+    background-color: #1F2739;
+}
+
+.container td:first-child { 
+    color: #ffffff; 
+}
+
+.container tr:hover {
+background-color: #3c4e74;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+        box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+/*.container td:hover {
+background-color: #FFF842;
+color: #000000;
+font-weight: bold;
+
+box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+/*transform: translate3d(6px, -6px, 0);*/
+
+/*transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+transition-timing-function: line;
+}*/
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+
+#coneccao{
+    text-align: center;
+}
