@@ -1,19 +1,29 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?php
+$host = "db4free.net";
+$user ="aut_resi";
+$password = "automacao_resi";
+$database = "automacao_resi";
+
+$link = mysqli_connect($host, $user, $password);
+$db = mysqli_select_db($link, $database,);
+
+if(!$link){
+echo "erro ao conectar ao banco de dados!";exit();
+}
+
+$SQL = "SELECT * FROM historico_alarme";
+$RS = mysqli_query($link, $SQL);
+
+
+?>
+
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+
+
 <style>
-    /*  
-    Side Navigation Menu V2, RWD
-    ===================
-    License:
-    https://goo.gl/EaUPrt
-    ===================
-    Author: @PableraShow
-    */
-    @charset "UTF-8";
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
     body {
     /*font-family: 'Open s', sans-serif;*/
@@ -175,17 +185,22 @@
 </style>
 
 <head>
-    <title>Automação Residencial</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automação Residencial</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <!--Importa a biblioteca PAHO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script><!---->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>-->
+    <!--<script src="mqttws231.js" type="text/javascript"></script>-->
+    <script src="mqtt.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript">
-    </script>
-   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="font-awesome.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link href="grid/simple-grid.min.css" rel="stylesheet">
 </head>
 
 <body>
+
+
 
     <h4>AUTOMAÇÃO RESIDENCIAL</h4>
    
@@ -194,18 +209,23 @@
         <table class="container">
             <thead>
             <tr class="blue">
+                <th><h1>OCORRÊNCIA</h1></th>
                 <th><h1>DATA</h1></th>
                 <th><h1>HORA</h1></th>
                 <th><h1>ESTADO</h1></th>
             </tr>
             </thead>
             <tbody class="item">
-            <tr>
-                <td>22/09/2021</td>
-                <td>09:20</td>
-                <td><i class="fa fa-clock-o" style="font-size:36px;color:red"></i></td>
-            </tr>
-            
+            <?php 
+                while($RF = mysqli_fetch_array($RS)){
+                ?>
+                <tr>
+                    <td><?php print_r($RF["ocorrencia"]);?></td>
+                    <td><?php print_r($RF["data"]);?></td>
+                    <td><?php print_r($RF["horario"]);?></td>
+                    <td><i class="fa fa-clock-o" style="font-size:36px;color:red"></i></td>
+                </tr>
+            <?php } ?>
             </tbody>
         </table>
     </div>

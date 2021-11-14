@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,10 +17,12 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    <link rel="stylesheet" href="font-awesome.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
    <!--<link href="grid/simple-grid.min.css" rel="stylesheet">  -->
 </head>
 
 <body onload="MQTTconnect()">
+
 
     <h4>AUTOMAÇÃO RESIDENCIAL</h4>
     <!---<i id="coneccao" class="fa fa-wifi" style="font-size:36px;color:yellow"></i><br>-->
@@ -49,7 +51,7 @@
             <tr>
                 <td>Sala</td>
                 <td><a onclick="change_lamp_state('\'Sala\'')"><i id="sala" class="fa fa-lightbulb-o" style="font-size:36px;color:white"></i></a></td>                
-                <td><i onclick="change_airc_state('\'Sala\'')" id="salaAr" class="fa fa-snowflake-o" style="font-size:36px;color:#4DC3FA"></i></td>
+                <td><i onclick="change_airc_state('\'Sala\'')" id="salaAr" class="fa fa-snowflake-o" style="font-size:36px;color:white"></i></td>
             </tr>
             <tr>
                 <td>Cozinha</td>
@@ -59,7 +61,7 @@
             <tr>
                 <td>Quarto 1</td>
                 <td><a onclick="change_lamp_state('\'Quarto1\'')"><i id="quarto1" class="fa fa-lightbulb-o" style="font-size:36px;color:white"></i></a></td>                
-                <td><i onclick="change_airc_state('\'Quarto1\'')" id="quarto1Ar" class="fa fa-snowflake-o" style="font-size:36px;color:gray"></i></td>
+                <td><i onclick="change_airc_state('\'Quarto1\'')" id="quarto1Ar" class="fa fa-snowflake-o" style="font-size:36px;color:white"></i></td>
             </tr>
             <tr>
                 <td>Quarto 2</td>
@@ -93,8 +95,8 @@
             <tbody class="item">
                 <tr>
                     <td>Alarme</td>
-                    <td><i onclick="change_alarm_state('\'Alarme\'')" id="alarme" class="fa fa-clock-o" style="font-size:36px;color:rgb(1, 223, 1)"></i></td>
-                    <td><a href="automacao_historico.html">Ver histórico</a></td>
+                    <td><i onclick="change_alarm_state('\'Alarme\'')" id="alarme" class="fa fa-clock-o" style="font-size:36px;color:white"></i></td>
+                    <td><a href="automacao_historico.php">Ver histórico</a></td>
                 </tr>
             </tbody>
         </table>
@@ -128,8 +130,8 @@
                     <td><input id="ArMinimo" type="number" value=""></td>
                 </tr>
                 <tr>
-                    <td>Tempo de espera:</td>
-                    <td><input id="TempoEspera" type="time" value=""></td>
+                    <td>Tempo de espera (min):</td>
+                    <td><input id="TempoEspera" type="number" value=""></td>
                 </tr>
             </table>
             <button style="margin-bottom: 10px;" onclick="send_airc_configuration()" id="botao">Salvar</button>
@@ -151,6 +153,58 @@
         </h2>
         <h2>by <a>Integrated IP LLC</a></h2>
     </div>
+
+    <h3 class="section">Área de testes</h3>
+        <table class="container">
+            <thead>
+            <tr class="blue">
+                <th><h1>CÔMODO</h1></th>
+                <th><h1>ESTADO</h1></th>
+            </tr>
+            </thead>
+            <tbody class="item">
+            <tr>
+                <td>Garagem</td>
+                <td><a onclick="change_sensor_state('\'Garagem\'')"><i id="'Garagem'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+        
+            </tr>
+            <tr>
+                <td>Sala</td>
+                <td><a onclick="change_sensor_state('\'Sala\'')"><i id="'Sala'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+                
+            </tr>
+            <tr>
+                <td>Cozinha</td>
+                <td><a onclick="change_sensor_state('\'Cozinha\'')"><i id="'Cozinha'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+    
+            </tr>
+            <tr>
+                <td>Quarto 1</td>
+                <td><a onclick="change_sensor_state('\'Quarto1\'')"><i id="'Quarto1'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+                
+            </tr>
+            <tr>
+                <td>Quarto 2</td>
+                <td><a onclick="change_sensor_state('\'Quarto2\'')"><i id="'Quarto2'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+            </tr>
+            <tr>
+                <td>Quarto 3</td>
+                <td><a onclick="change_sensor_state('\'Quarto3\'')"><i id="'Quarto3'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+            </tr>
+            <tr>
+                <td>Banheiro</td>
+                <td><a onclick="change_sensor_state('\'Banheiro\'')"><i id="'Banheiro'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+            </tr>
+            <tr>
+                <td>Porta</td>
+                <td><a onclick="change_sensor_state('\'Porta\'')"><i id="'Porta'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+            </tr>
+            <tr>
+                <td>Janela</td>
+                <td><a onclick="change_sensor_state('\'Janela\'')"><i id="'Janela'" class="fa fa-wifi" style="font-size:36px;color:white"></i></a></td>                
+            </tr>
+            </tbody>
+        </table>
 
 </body>
 
