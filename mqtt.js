@@ -153,7 +153,7 @@ function onConnect() {
 function MQTTconnect() {
     
         host = "broker.mqttdashboard.com";
-        port = 8000;
+        port = 1883;
         
         /*host="test.mosquitto.org";
         port = 8080;*/
